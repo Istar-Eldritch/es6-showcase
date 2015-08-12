@@ -1,0 +1,38 @@
+{
+  "name": "showcase",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "postinstall": "jspm install && gulp build",
+    "start": "http-server public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-flatten": "^0.1.1",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "http-server": "^0.8.0",
+    "jspm": "^0.15.7",
+    "systemjs-builder": "^0.12.2"
+  },
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.0",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "bootstrap-sass": "npm:bootstrap-sass@^3.3.4",
+      "font-awesome": "npm:font-awesome@^4.3.0",
+      "ramda": "npm:ramda@^0.16.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}

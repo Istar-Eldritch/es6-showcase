@@ -1,0 +1,10 @@
+/public_src/bower
+/node_modules
+/jspm_packages
+/public
+/docs
+/zadia-ng
+/zadia-sass
+/assets/avatars
+/log
+npm-debug.log
