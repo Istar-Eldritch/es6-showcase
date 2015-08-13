@@ -9,7 +9,7 @@ function TodoController($scope) {
   ];
 
   $scope.remove = function remove(index) {
-    $scope.todos.splice(index);
+    $scope.todos.splice(index,1);
   };
 
   $scope.add = function add() {
