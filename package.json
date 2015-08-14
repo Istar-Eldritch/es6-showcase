@@ -10,13 +10,17 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "http-server": "^0.8.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
     "gulp-flatten": "^0.1.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-ng-html2js": "^0.2.0",
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
-    "http-server": "^0.8.0",
     "jspm": "^0.15.7",
     "systemjs-builder": "^0.12.2"
   },

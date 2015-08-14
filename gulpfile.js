@@ -5,6 +5,9 @@ var sass = require('gulp-sass');
 var Builder = require('systemjs-builder');
 var sourcemaps = require('gulp-sourcemaps');
 var flatten = require('gulp-flatten');
+var ngHtml2Js = require('gulp-ng-html2js');
+var minifyHtml = require('gulp-minify-html');
+var concat = require('gulp-concat');
 
 var path = {
   public: {
@@ -16,6 +19,7 @@ var path = {
     _: 'public_src/',
     sass: 'public_src/main.sass',
     js: 'public_src/showcase',
+    html: 'public_src/**/*.html'
   },
   fonts: '**/*.{ttf,woff,woff2,eof,svg}'
 };
@@ -35,7 +39,20 @@ gulp.task('sass', function() {
 });
 
 gulp.task('html', function() {
-  gulp.src(path.src._ + '**/*.html')
+
+  gulp.src(path.src.html)
+  .pipe(minifyHtml({
+    empty: true,
+    spare: true,
+    quotes: true
+  }))
+  .pipe(ngHtml2Js({
+    moduleName: 'showcaseTemplates'
+  }))
+  .pipe(concat('templates.js'))
+  .pipe(gulp.dest(path.public._));
+
+  gulp.src(path.src._ + 'index.html')
   .pipe(gulp.dest(path.public._));
 });
 
